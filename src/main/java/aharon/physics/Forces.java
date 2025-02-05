@@ -1,9 +1,11 @@
+package aharon.physics;
+
 public class Forces {
-    public static double magCOSdegree(double magnitude, double degree) {
+    public static double magCosDegree(double magnitude, double degree) {
         return magnitude * Math.cos(Math.toRadians(degree));
     }
 
-    public static double magSINdegree(double magnitude, double degree) {
+    public static double magSinDegree(double magnitude, double degree) {
         return magnitude * Math.sin(Math.toRadians(degree));
     }
 
@@ -20,8 +22,8 @@ public class Forces {
 
     public static double getAngle(double finalX, double finalY) {
         double tanNum = finalY / finalX;
-        double tan_result = Math.atan(tanNum);
-        return Math.toDegrees(tan_result);
+        double tanResult = Math.atan(tanNum);
+        return Math.toDegrees(tanResult);
     }
 
 //    public static double getAngle(double finalX, double finalY) {
@@ -29,10 +31,10 @@ public class Forces {
 //    }
 
     public static void main(String[] args) {
-        double firstX = magCOSdegree(10, 32);
-        double secondX = magCOSdegree(10, 105);
-        double firstY = magSINdegree(10, 32);
-        double secondY = magSINdegree(10, 105);
+        double firstX = magCosDegree(10, 32);
+        double secondX = magCosDegree(10, 105);
+        double firstY = magSinDegree(10, 32);
+        double secondY = magSinDegree(10, 105);
 
         double finalX = firstX + secondX;
         double finalY = firstY + secondY;
