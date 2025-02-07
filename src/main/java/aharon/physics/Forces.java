@@ -15,9 +15,6 @@ public class Forces {
         double totalSquared = squareX + squareY;
         return Math.sqrt(totalSquared);
     }
-//    public static double getMag(double finalX, double finalY) {
-//        return Math.hypot(finalX, finalY);
-//    }
 
     public static double getAngle(double finalX, double finalY) {
         double tanNum = finalY / finalX;
@@ -25,27 +22,14 @@ public class Forces {
         return Math.toDegrees(tanResult);
     }
 
-//    public static double getAngle(double finalX, double finalY) {
-//        return Math.toDegrees(Math.atan2(finalY, finalX));
-//    }
-
     public static void main(String[] args) {
-        double firstX = magCosDegree(10, 32); //orig: 10, 32
+        double firstX = magCosDegree(10, 32);
         double secondX = magCosDegree(10, 105);
         double firstY = magSinDegree(10, 32);
         double secondY = magSinDegree(10, 105);
 
         double finalX = firstX + secondX;
         double finalY = firstY + secondY;
-
-//        System.out.println("First X: " + firstX);
-//        System.out.println("Second X: " + secondX);
-//
-//        System.out.println("First Y: " + firstY);
-//        System.out.println("Second Y: " + secondY);
-//
-//        System.out.println("Final X: " + finalX);
-//        System.out.println("Final Y: " + finalY);
 
         double magnitude = getMag(finalX, finalY);
         System.out.println("The resulting magnitude is: " + String.format("%.2f", magnitude));
