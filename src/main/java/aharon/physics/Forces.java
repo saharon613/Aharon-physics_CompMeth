@@ -15,7 +15,6 @@ public class Forces {
         double totalSquared = squareX + squareY;
         return Math.sqrt(totalSquared);
     }
-
 //    public static double getMag(double finalX, double finalY) {
 //        return Math.hypot(finalX, finalY);
 //    }

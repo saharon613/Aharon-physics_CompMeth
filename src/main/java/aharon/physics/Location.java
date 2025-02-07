@@ -1,4 +1,5 @@
 package aharon.physics;
+
 public class Location
 {
     private double x;
