@@ -42,7 +42,7 @@ public class Force {
     }
 
     public Force scale(double scale) {
-        return new Force(degrees,magnitude * scale);
+        return new Force(degrees, magnitude * scale);
     }
 }
 
