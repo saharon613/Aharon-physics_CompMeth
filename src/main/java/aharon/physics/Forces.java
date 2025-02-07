@@ -31,7 +31,7 @@ public class Forces {
 //    }
 
     public static void main(String[] args) {
-        double firstX = magCosDegree(10, 32);
+        double firstX = magCosDegree(10, 32); //orig: 10, 32
         double secondX = magCosDegree(10, 105);
         double firstY = magSinDegree(10, 32);
         double secondY = magSinDegree(10, 105);
