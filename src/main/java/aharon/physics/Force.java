@@ -24,11 +24,11 @@ public class Force {
         return new Force(finalAngle, magnitude);
     }
 
-    public double getX(){
+    public double getX() {
         return magnitude * Math.cos(Math.toRadians(degrees));
     }
 
-    public double getY(){
+    public double getY() {
         return magnitude * Math.sin(Math.toRadians(degrees));
     }
 
