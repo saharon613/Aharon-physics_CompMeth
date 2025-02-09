@@ -11,8 +11,8 @@ public class Location
     }
 
     public Location apply(Force force) {
-        double newX = this.x + force.getMagnitude() * Math.cos(Math.toRadians(force.getDegrees()));
-        double newY = this.y + force.getMagnitude() * Math.sin(Math.toRadians(force.getDegrees()));
+        double newX = this.x + force.getX();
+        double newY = this.y + force.getY();
 
         return new Location(newX, newY);
     }

@@ -1,14 +1,5 @@
 package aharon.physics;
 
-/***
- * Force should have:
- * degree
- * magnitude
- * and a constructor
- * method:
- *Force add(Force f)
- */
-
 public class Force {
     private double degrees;
     private double magnitude;
@@ -19,10 +10,10 @@ public class Force {
     }
 
     public Force add(Force force2) {
-        double firstX = force2.magnitude * Math.cos(Math.toRadians(force2.degrees));
-        double secondX = this.magnitude * Math.cos(Math.toRadians(this.degrees));
-        double firstY = force2.magnitude * Math.sin(Math.toRadians(force2.degrees));
-        double secondY = this.magnitude * Math.sin(Math.toRadians(this.degrees));
+        double firstX = force2.getX();
+        double secondX = this.getX();
+        double firstY = force2.getY();
+        double secondY = this.getY();
 
         double finalX = firstX + secondX;
         double finalY = firstY + secondY;
@@ -31,6 +22,14 @@ public class Force {
         double magnitude = Math.hypot(finalX, finalY);
 
         return new Force(finalAngle, magnitude);
+    }
+
+    public double getX(){
+        return magnitude * Math.cos(Math.toRadians(degrees));
+    }
+
+    public double getY(){
+        return magnitude * Math.sin(Math.toRadians(degrees));
     }
 
     public double getDegrees() {
