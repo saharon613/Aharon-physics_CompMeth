@@ -8,8 +8,8 @@ class ForceTest {
     @Test
     public void add() {
         // set variables in given
-        Force a = new Force(32, 10);
-        Force b = new Force(105, 10);
+        Force a = new Force(new Degrees(32), 10);
+        Force b = new Force(new Degrees(105), 10);
 
         // test method in when
         Force c = a.add(b);
@@ -22,7 +22,7 @@ class ForceTest {
     @Test
     void scale() {
         // given
-        Force a = new Force(30, 15);
+        Force a = new Force(new Degrees(30), 15);
 
         // when
         Force scale = a.scale(.391);

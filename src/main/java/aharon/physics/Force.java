@@ -1,12 +1,21 @@
 package aharon.physics;
 
 public class Force {
-    private double degrees;
-    private double magnitude;
 
-    public Force(double degrees, double magnitude) {
-        this.degrees = degrees;
-        this.magnitude = magnitude;
+    public static final Force GRAVITY = new Force(0, -9.8);     // static means it is a constant
+
+    private double x;
+    private double y;
+
+    Force(Degrees degrees, double magnitude)
+    {
+        x = magnitude * Math.cos(degrees.toRadians());
+        y = magnitude * Math.sin(degrees.toRadians());
+    }
+
+    public Force(double x, double y) {
+        this.x = x;
+        this.y = y;
     }
 
     public Force add(Force force2) {
@@ -18,30 +27,35 @@ public class Force {
         double finalX = firstX + secondX;
         double finalY = firstY + secondY;
 
-        double finalAngle = Math.toDegrees(Math.atan2(finalY, finalX));
-        double magnitude = Math.hypot(finalX, finalY);
-
-        return new Force(finalAngle, magnitude);
+        return new Force(finalX, finalY);
     }
 
     public double getX() {
-        return magnitude * Math.cos(Math.toRadians(degrees));
+
+        return x;
     }
 
     public double getY() {
-        return magnitude * Math.sin(Math.toRadians(degrees));
+        return y;
     }
 
     public double getDegrees() {
-        return degrees;
+        return Math.toDegrees(Math.atan2(y, x));
     }
 
     public double getMagnitude() {
-        return magnitude;
+        return Math.hypot(x, y);
     }
 
     public Force scale(double scale) {
-        return new Force(degrees, magnitude * scale);
+        return new Force(x * scale, y * scale);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(x).append(", ").append(y).append("\n");
+        return sb.toString();
     }
 }
 

@@ -10,7 +10,7 @@ public class Location
         this.y = y;
     }
 
-    public Location apply(Force force) {
+    public Location move(Force force) {
         double newX = this.x + force.getX();
         double newY = this.y + force.getY();
 
@@ -23,5 +23,13 @@ public class Location
 
     public double getX() {
         return x;
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

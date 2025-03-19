@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class LocationTest {
 
     @Test
-    void apply()
+    void move()
     {
         // given
         Location a = new Location(7, 3);
         Force f = new Force(36.87, 5);
 
         // when
-        Location b = a.apply(f);
+        Location b = a.move(f);
 
         // then
         assertEquals(11, b.getX(), .1);
