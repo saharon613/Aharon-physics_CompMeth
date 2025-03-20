@@ -17,27 +17,29 @@ public class PhysicsFrame extends JFrame {
     private final JTextField magnitudeField = new JTextField("Magnitude");
     private final JTextField timeField = new JTextField("Time");
     private final JLabel resultLabel = new JLabel("(x, y)");
+    private final ProjectileGraph graph = new ProjectileGraph();
     private final PhysicsController controller;
 
     public PhysicsFrame() {
         setTitle("Moving Projectile");
         setSize(300, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(4, 2));
+        setLayout(new BorderLayout());
 
-        controller = new PhysicsController(angleSlider, magnitudeField, timeField, resultLabel);
+        controller = new PhysicsController(angleSlider, magnitudeField, timeField, resultLabel, graph);
 
-        //JButton calculateButton = new JButton("Calculate");
+        JPanel westPanel = new JPanel();
+        westPanel.setLayout(new GridLayout(4, 1));
 
         JLabel angleLabel = new JLabel("Angle Slider: ");
-        add(angleLabel);
-        add(angleSlider);
-        add(magnitudeField);
-        add(resultLabel);
-        add(timeField);
-        add(new Label());   //blank space
-        add(new Label());   //blank space
-        //add(calculateButton);
+        westPanel.add(angleLabel);
+
+        westPanel.add(angleSlider);
+        westPanel.add(magnitudeField);
+        westPanel.add(timeField);
+        add(westPanel, BorderLayout.WEST);
+
+        add(graph, BorderLayout.CENTER);
 
         angleSlider.addChangeListener(new ChangeListener() {
             @Override

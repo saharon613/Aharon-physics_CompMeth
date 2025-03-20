@@ -31,7 +31,6 @@ public class Force {
     }
 
     public double getX() {
-
         return x;
     }
 

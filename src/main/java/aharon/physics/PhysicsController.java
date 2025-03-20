@@ -8,12 +8,20 @@ public class PhysicsController
     private final JTextField magnitudeField;
     private final JTextField timeField;
     private final JLabel locationLabel;
+    private final ProjectileGraph graph;
 
-    public PhysicsController(JSlider angleSlider, JTextField magnitudeField, JTextField timeField, JLabel locationLabel) {
+    public PhysicsController(
+            JSlider angleSlider,
+            JTextField magnitudeField,
+            JTextField timeField,
+            JLabel locationLabel,
+            ProjectileGraph graph) {
+
         this.angleSlider = angleSlider;
         this.magnitudeField = magnitudeField;
         this.timeField = timeField;
         this.locationLabel = locationLabel;
+        this.graph = graph;
     }
 
     public void calculate() {
@@ -33,6 +41,9 @@ public class PhysicsController
         }
 
         double time = Double.parseDouble(timeField.getText());
+
+        graph.setValues(angle, magnitude, time);
+
         for (int i = 0; i < time; i++)
         {
             p.move(1);
